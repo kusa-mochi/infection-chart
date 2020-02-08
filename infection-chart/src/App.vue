@@ -4,7 +4,25 @@
       <div class="param-item">
         <div class="param-item__label">総人口</div>
         <div class="param-item__input">
-          <vue-slider v-model="numPeople" :min="1" :max="10000000000"></vue-slider>
+          <vue-slider v-model="numPeople" :min="0" :max="10000000000" :interval="100000000"></vue-slider>
+        </div>
+        <div class="param-item__label">日数</div>
+        <div class="param-item__input">
+          <vue-slider v-model="days" :min="5" :max="1000"></vue-slider>
+        </div>
+        <div class="param-item__label">1日当りの平均接触人数</div>
+        <div class="param-item__input">
+          <vue-slider v-model="numMeet" :min="0" :max="10" :interval="0.1"></vue-slider>
+        </div>
+        <div class="param-item__label">感染確率</div>
+        <div class="param-item__input">
+          <vue-slider
+            v-model="probInfection"
+            :min="0"
+            :max="1"
+            :interval="0.01"
+            :tooltip-formatter="probInfectionToShow"
+          ></vue-slider>
         </div>
       </div>
     </div>
