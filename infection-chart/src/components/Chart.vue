@@ -59,7 +59,7 @@ export default {
         labels: xLabels,
         datasets: [
           {
-            label: "Line Dataset",
+            label: "感染者数",
             data: xData,
             borderColor: "#CFD8DC",
             fill: false,
