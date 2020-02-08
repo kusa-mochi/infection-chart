@@ -68,15 +68,25 @@ export default {
 
 <style lang="scss">
 #app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+
   .param-area {
-    .param-item {
-      &__label {
-      }
-      &__input {
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    width: 200px;
+    margin-right: 16px;
   }
   .chart-area {
+    width: 500px;
   }
 }
 </style>
