@@ -54,6 +54,11 @@ export default {
       y0: 1
     };
   },
+  computed: {
+    probInfectionToShow() {
+      return (this.probInfection * 100) + "%";
+    }
+  },
   components: {
     Chart,
     VueSlider
