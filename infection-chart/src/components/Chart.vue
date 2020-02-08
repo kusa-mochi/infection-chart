@@ -1,9 +1,11 @@
 <script>
-import { Line } from "vue-chartjs";
+import { Line, mixins } from "vue-chartjs";
+const { reactiveProp } = mixins;
 
 export default {
   extends: Line,
   name: "chart",
+  mixins: [reactiveProp],
   props: {
     days: {
       type: Number,
@@ -86,17 +88,6 @@ export default {
         { responsive: true, maintainAspectRatio: false }
       );
     }
-  },
-  watch: {
-    chartData() {
-      this._chart.destroy();
-      //this.renderChart(this.data, this.options);
-      this.renderLineChart();
-    }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-/* You can write Sass styles here. */
-</style>

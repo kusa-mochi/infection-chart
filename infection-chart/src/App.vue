@@ -1,8 +1,16 @@
 <template>
   <div id="app">
-    <div class="param-area"></div>
+    <div class="param-area">
+      <div class="param-item">
+        <div class="param-item__label">総人口</div>
+        <div class="param-item__input">
+          <vue-slider v-model="numPeople" :min="1" :max="10000000000"></vue-slider>
+        </div>
+      </div>
+    </div>
     <div class="chart-area">
       <chart
+        ref="resultChart"
         :days="days"
         :num-people="numPeople"
         :num-meet="numMeet"
@@ -15,6 +23,8 @@
 
 <script>
 import Chart from "./components/Chart.vue";
+import VueSlider from "vue-slider-component";
+import "vue-slider-component/theme/default.css";
 export default {
   name: "app",
   data() {
@@ -27,7 +37,8 @@ export default {
     };
   },
   components: {
-    Chart
+    Chart,
+    VueSlider
   }
 };
 </script>
@@ -35,6 +46,12 @@ export default {
 <style lang="scss">
 #app {
   .param-area {
+    .param-item {
+      &__label {
+      }
+      &__input {
+      }
+    }
   }
   .chart-area {
   }
